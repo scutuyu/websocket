@@ -29,8 +29,6 @@ public class Server
         try {
             ChannelFuture future = bootstrap.bind(port).sync();
             System.out.println("Web socket server started at port " + port + '.');
-            System.out.println("Open your browser and navigate to http://localhost:"
-                    + port + '/');
             future.channel().closeFuture().sync();
         } catch (InterruptedException e) {
             e.printStackTrace();
